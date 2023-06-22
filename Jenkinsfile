@@ -5,10 +5,14 @@ pipeline {
 	}
 	stages {		
 		stage('Project Checkout') {
-			git  branch:'master', url: 'https://github.com/AkshataMullya/Springtomcat.git'	
+			steps{
+			 git  branch:'master', url: 'https://github.com/AkshataMullya/Springtomcat.git'	
+		}
 		}
 		stage('Build Package') {
-		   sh 'maven clean package'
+			steps{
+		   		sh 'maven clean package'
 			}
 }
+	}
 }
